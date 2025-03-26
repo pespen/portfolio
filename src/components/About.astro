@@ -1,0 +1,60 @@
+---
+interface Props {
+  name?: string;
+  email?: string;
+  location?: string;
+  bio1?: string;
+  bio2?: string; 
+  profileImage?: string;
+}
+
+const { 
+  name = "Your Name", 
+  email = "your.email@example.com", 
+  location = "Your City, Country",
+  bio1 = "I'm a passionate web developer with experience in building modern web applications. I focus on creating clean, efficient, and user-friendly experiences.",
+  bio2 = "With a background in both frontend and backend development, I enjoy bringing ideas to life through code. I'm constantly learning and exploring new technologies to improve my skills and deliver better solutions.",
+  profileImage = "" 
+} = Astro.props;
+---
+
+<section id="about" class="py-20 scroll-mt-24">
+  <h2 class="text-3xl font-bold text-center mb-4">About Me</h2>
+  <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-center">
+    <div class="w-full">
+      {profileImage ? (
+        <img 
+          src={profileImage} 
+          alt={`${name} profile picture`} 
+          class="w-full aspect-square object-cover rounded-full"
+        />
+      ) : (
+        <div class="w-full aspect-square bg-gray-200 rounded-full flex items-center justify-center text-gray-500">
+          Profile Image
+        </div>
+      )}
+    </div>
+    <div>
+      <p class="mb-6 leading-relaxed">
+        {bio1}
+      </p>
+      <p class="mb-6 leading-relaxed">
+        {bio2}
+      </p>
+      <div class="mt-8">
+        <div class="mb-3 flex">
+          <span class="font-bold min-w-[100px]">Name:</span>
+          <span>{name}</span>
+        </div>
+        <div class="mb-3 flex">
+          <span class="font-bold min-w-[100px]">Email:</span>
+          <span>{email}</span>
+        </div>
+        <div class="mb-3 flex">
+          <span class="font-bold min-w-[100px]">Location:</span>
+          <span>{location}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 

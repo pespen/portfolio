@@ -1,0 +1,37 @@
+---
+interface Skill {
+  title: string;
+  items: string[];
+}
+
+interface Props {
+  skills: Skill[];
+}
+
+const { skills = [
+  {
+    title: "Frontend",
+    items: ["HTML", "CSS", "JavaScript", "React", "Vue", "Astro"]
+  },
+  {
+    title: "Backend",
+    items: ["Node.js", "Express", "MongoDB", "PostgreSQL"]
+  },
+  {
+    title: "Tools",
+    items: ["Git", "Webpack", "Docker", "AWS"]
+  }
+]} = Astro.props;
+---
+
+<section id="skills" class="py-20 bg-gray-50 scroll-mt-24">
+  <h2 class="text-3xl font-bold text-center mb-12">My Skills</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {skills.map((skill) => (
+      <div class="bg-white p-6 rounded-lg shadow-sm">
+        <h3 class="text-xl font-semibold mb-2">{skill.title}</h3>
+        <p class="text-gray-600">{skill.items.join(", ")}</p>
+      </div>
+    ))}
+  </div>
+</section> 

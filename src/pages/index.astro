@@ -1,209 +1,90 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+
+// You can customize these values
+const personalInfo = {
+  name: "Your Name", 
+  title: "Web Developer & Designer",
+  email: "your.email@example.com",
+  location: "Your City, Country"
+};
+
+// Customize your skills
+const skills = [
+  {
+    title: "Frontend",
+    items: ["HTML", "CSS", "JavaScript", "React", "Vue", "Astro"]
+  },
+  {
+    title: "Backend",
+    items: ["Node.js", "Express", "MongoDB", "PostgreSQL"]
+  },
+  {
+    title: "Tools",
+    items: ["Git", "Webpack", "Docker", "AWS"]
+  }
+];
+
+// Add your projects here
+const projects = [
+  {
+    title: "Project Name",
+    description: "A brief description of the project and what technologies were used.",
+    tags: ["React", "Node.js", "MongoDB"],
+    liveUrl: "#",
+    sourceUrl: "#"
+  },
+  {
+    title: "Project Name",
+    description: "A brief description of the project and what technologies were used.",
+    tags: ["Vue", "Express", "PostgreSQL"],
+    liveUrl: "#",
+    sourceUrl: "#"
+  },
+  {
+    title: "Project Name",
+    description: "A brief description of the project and what technologies were used.",
+    tags: ["Astro", "Tailwind", "Firebase"],
+    liveUrl: "#",
+    sourceUrl: "#"
+  }
+];
+
+// Your social links
+const socialLinks = [
+  { name: "GitHub", url: "#" },
+  { name: "LinkedIn", url: "#" },
+  { name: "Twitter", url: "#" }
+];
 ---
 
 <MainLayout title="Portfolio | Home">
-  <!-- Hero Section -->
-  <section id="home" class="min-h-[calc(100vh-120px)] flex flex-col justify-center items-start py-20 scroll-mt-24">
-    <div class="max-w-2xl">
-      <h1 class="text-5xl font-bold leading-tight mb-4">
-        Hi, I'm <span class="text-blue-500">Your Name</span>
-      </h1>
-      <p class="text-2xl text-gray-600 mb-6">Web Developer & Designer</p>
-      <p class="text-lg text-gray-700 mb-8 leading-relaxed">
-        I build clean, responsive, and user-friendly websites with modern technologies.
-      </p>
-      <div class="flex gap-4 flex-wrap">
-        <a href="#projects" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-300">
-          View Projects
-        </a>
-        <a href="#contact" class="px-6 py-3 border border-gray-800 hover:bg-gray-800 hover:text-white font-medium rounded-md transition-colors duration-300">
-          Contact Me
-        </a>
-      </div>
-    </div>
-  </section>
+  <Hero 
+    name={personalInfo.name}
+    title={personalInfo.title}
+    description="I build clean, responsive, and user-friendly websites with modern technologies."
+  />
 
-  <!-- About Section -->
-  <section id="about" class="py-20 scroll-mt-24">
-    <h2 class="text-3xl font-bold text-center mb-4">About Me</h2>
-    <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-center">
-      <div class="w-full">
-        <div class="w-full aspect-square bg-gray-200 rounded-full flex items-center justify-center text-gray-500">
-          Profile Image
-        </div>
-      </div>
-      <div>
-        <p class="mb-6 leading-relaxed">
-          I'm a passionate web developer with experience in building modern web applications.
-          I focus on creating clean, efficient, and user-friendly experiences.
-        </p>
-        <p class="mb-6 leading-relaxed">
-          With a background in both frontend and backend development, I enjoy bringing
-          ideas to life through code. I'm constantly learning and exploring new technologies
-          to improve my skills and deliver better solutions.
-        </p>
-        <div class="mt-8">
-          <div class="mb-3 flex">
-            <span class="font-bold min-w-[100px]">Name:</span>
-            <span>Your Name</span>
-          </div>
-          <div class="mb-3 flex">
-            <span class="font-bold min-w-[100px]">Email:</span>
-            <span>your.email@example.com</span>
-          </div>
-          <div class="mb-3 flex">
-            <span class="font-bold min-w-[100px]">Location:</span>
-            <span>Your City, Country</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <About 
+    name={personalInfo.name}
+    email={personalInfo.email}
+    location={personalInfo.location}
+    bio1="I'm a passionate web developer with experience in building modern web applications. I focus on creating clean, efficient, and user-friendly experiences."
+    bio2="With a background in both frontend and backend development, I enjoy bringing ideas to life through code. I'm constantly learning and exploring new technologies to improve my skills and deliver better solutions."
+  />
 
-  <!-- Skills Section -->
-  <section id="skills" class="py-20 bg-gray-50 scroll-mt-24">
-    <h2 class="text-3xl font-bold text-center mb-12">My Skills</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="text-xl font-semibold mb-2">Frontend</h3>
-        <p class="text-gray-600">HTML, CSS, JavaScript, React, Vue, Astro</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="text-xl font-semibold mb-2">Backend</h3>
-        <p class="text-gray-600">Node.js, Express, MongoDB, PostgreSQL</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="text-xl font-semibold mb-2">Tools</h3>
-        <p class="text-gray-600">Git, Webpack, Docker, AWS</p>
-      </div>
-    </div>
-  </section>
+  <Skills skills={skills} />
 
-  <!-- Projects Section -->
-  <section id="projects" class="py-20 scroll-mt-24">
-    <h2 class="text-3xl font-bold text-center mb-4">My Projects</h2>
-    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-      Here are some of the projects I've worked on.
-    </p>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Project 1 -->
-      <div class="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:-translate-y-1 hover:shadow-lg">
-        <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 font-medium">
-          Project Image
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-3">Project Name</h3>
-          <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-            A brief description of the project and what technologies were used.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-5">
-            <span class="bg-gray-100 text-blue-500 text-xs px-2 py-1 rounded-md font-medium">React</span>
-            <span class="bg-gray-100 text-blue-500 text-xs px-2 py-1 rounded-md font-medium">Node.js</span>
-            <span class="bg-gray-100 text-blue-500 text-xs px-2 py-1 rounded-md font-medium">MongoDB</span>
-          </div>
-          <div class="flex gap-4 text-sm font-medium">
-            <a href="#" class="text-blue-500 hover:text-blue-700">View Live</a>
-            <a href="#" class="text-blue-500 hover:text-blue-700">Source Code</a>
-          </div>
-        </div>
-      </div>
+  <Projects projects={projects} />
 
-      <!-- Project 2 -->
-      <div class="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:-translate-y-1 hover:shadow-lg">
-        <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 font-medium">
-          Project Image
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-3">Project Name</h3>
-          <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-            A brief description of the project and what technologies were used.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-5">
-            <span class="bg-gray-100 text-blue-500 text-xs px-2 py-1 rounded-md font-medium">Vue</span>
-            <span class="bg-gray-100 text-blue-500 text-xs px-2 py-1 rounded-md font-medium">Express</span>
-            <span class="bg-gray-100 text-blue-500 text-xs px-2 py-1 rounded-md font-medium">PostgreSQL</span>
-          </div>
-          <div class="flex gap-4 text-sm font-medium">
-            <a href="#" class="text-blue-500 hover:text-blue-700">View Live</a>
-            <a href="#" class="text-blue-500 hover:text-blue-700">Source Code</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:-translate-y-1 hover:shadow-lg">
-        <div class="h-48 bg-gray-200 flex items-center justify-center text-gray-500 font-medium">
-          Project Image
-        </div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-3">Project Name</h3>
-          <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-            A brief description of the project and what technologies were used.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-5">
-            <span class="bg-gray-100 text-blue-500 text-xs px-2 py-1 rounded-md font-medium">Astro</span>
-            <span class="bg-gray-100 text-blue-500 text-xs px-2 py-1 rounded-md font-medium">Tailwind</span>
-            <span class="bg-gray-100 text-blue-500 text-xs px-2 py-1 rounded-md font-medium">Firebase</span>
-          </div>
-          <div class="flex gap-4 text-sm font-medium">
-            <a href="#" class="text-blue-500 hover:text-blue-700">View Live</a>
-            <a href="#" class="text-blue-500 hover:text-blue-700">Source Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-gray-50 scroll-mt-24">
-    <h2 class="text-3xl font-bold text-center mb-4">Contact Me</h2>
-    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-      Feel free to reach out if you'd like to work together.
-    </p>
-    
-    <div class="grid md:grid-cols-[3fr_2fr] gap-12">
-      <div class="bg-white p-8 rounded-lg shadow-sm">
-        <form>
-          <div class="mb-6">
-            <label for="name" class="block mb-2 font-medium">Name</label>
-            <input type="text" id="name" name="name" required 
-                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
-          </div>
-          <div class="mb-6">
-            <label for="email" class="block mb-2 font-medium">Email</label>
-            <input type="email" id="email" name="email" required 
-                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
-          </div>
-          <div class="mb-6">
-            <label for="message" class="block mb-2 font-medium">Message</label>
-            <textarea id="message" name="message" rows="5" required
-                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
-          </div>
-          <button type="submit" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-300">
-            Send Message
-          </button>
-        </form>
-      </div>
-      <div class="flex flex-col gap-8">
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Email</h3>
-          <p class="text-gray-600">your.email@example.com</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Location</h3>
-          <p class="text-gray-600">Your City, Country</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Social</h3>
-          <div class="flex gap-4">
-            <a href="#" aria-label="GitHub" class="text-blue-500 hover:text-blue-700">GitHub</a>
-            <a href="#" aria-label="LinkedIn" class="text-blue-500 hover:text-blue-700">LinkedIn</a>
-            <a href="#" aria-label="Twitter" class="text-blue-500 hover:text-blue-700">Twitter</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <Contact 
+    email={personalInfo.email}
+    location={personalInfo.location}
+    socialLinks={socialLinks}
+  />
 </MainLayout> 

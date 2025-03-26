@@ -1,0 +1,29 @@
+---
+interface Props {
+  name: string;
+  title: string;
+  description: string;
+}
+
+const { name = "Your Name", title = "Web Developer & Designer", description = "I build clean, responsive, and user-friendly websites with modern technologies." } = Astro.props;
+---
+
+<section id="home" class="min-h-[calc(100vh-120px)] flex flex-col justify-center items-start py-20 scroll-mt-24">
+  <div class="max-w-2xl">
+    <h1 class="text-5xl font-bold leading-tight mb-4">
+      Hi, I'm <span class="text-blue-500">{name}</span>
+    </h1>
+    <p class="text-2xl text-gray-600 mb-6">{title}</p>
+    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+      {description}
+    </p>
+    <div class="flex gap-4 flex-wrap">
+      <a href="#projects" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-300">
+        View Projects
+      </a>
+      <a href="#contact" class="px-6 py-3 border border-gray-800 hover:bg-gray-800 hover:text-white font-medium rounded-md transition-colors duration-300">
+        Contact Me
+      </a>
+    </div>
+  </div>
+</section> 
