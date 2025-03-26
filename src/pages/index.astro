@@ -55,15 +55,18 @@ const projects = [
   }
 ];
 
-// Your social links
+// Your social links - used in both MainLayout and Contact components
 const socialLinks = [
-  { name: "GitHub", url: "#" },
-  { name: "LinkedIn", url: "#" },
-  { name: "Twitter", url: "#" }
+  { name: "GitHub", url: "https://github.com/pespen", icon: "github" },
+  { name: "LinkedIn", url: "https://linkedin.com/in/peder-espen-0a3ab6200", icon: "linkedin" }
 ];
 ---
 
-<MainLayout title="Portfolio | Home">
+<MainLayout 
+  title={`${personalInfo.name} | Portfolio`}
+  socialLinks={socialLinks}
+  name={personalInfo.name}
+>
   <Hero 
     name={personalInfo.name}
     title={personalInfo.title}
