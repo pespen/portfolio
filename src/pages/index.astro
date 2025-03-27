@@ -1,93 +1,26 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Skills from '../components/Skills.astro';
-import Projects from '../components/Projects.astro';
-import Contact from '../components/Contact.astro';
+import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Skills from "../components/Skills.astro";
+import Projects from "../components/Projects.astro";
+import Contact from "../components/Contact.astro";
 
-// You can customize these values
-const personalInfo = {
-  name: "Your Name", 
-  title: "Web Developer & Designer",
-  email: "your.email@example.com",
-  location: "Your City, Country"
-};
-
-// Customize your skills
-const skills = [
-  {
-    title: "Frontend",
-    items: ["HTML", "CSS", "JavaScript", "React", "Vue", "Astro"]
-  },
-  {
-    title: "Backend",
-    items: ["Node.js", "Express", "MongoDB", "PostgreSQL"]
-  },
-  {
-    title: "Tools",
-    items: ["Git", "Webpack", "Docker", "AWS"]
-  }
-];
-
-// Add your projects here
-const projects = [
-  {
-    title: "Project Name",
-    description: "A brief description of the project and what technologies were used.",
-    tags: ["React", "Node.js", "MongoDB"],
-    liveUrl: "#",
-    sourceUrl: "#"
-  },
-  {
-    title: "Project Name",
-    description: "A brief description of the project and what technologies were used.",
-    tags: ["Vue", "Express", "PostgreSQL"],
-    liveUrl: "#",
-    sourceUrl: "#"
-  },
-  {
-    title: "Project Name",
-    description: "A brief description of the project and what technologies were used.",
-    tags: ["Astro", "Tailwind", "Firebase"],
-    liveUrl: "#",
-    sourceUrl: "#"
-  }
-];
-
-// Your social links - used in both MainLayout and Contact components
+// Your social links - used in MainLayout
 const socialLinks = [
   { name: "GitHub", url: "https://github.com/pespen", icon: "github" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/peder-espen-0a3ab6200", icon: "linkedin" }
+  {
+    name: "LinkedIn",
+    url: "https://linkedin.com/in/peder-espen-0a3ab6200",
+    icon: "linkedin",
+  },
 ];
 ---
 
-<MainLayout 
-  title={`${personalInfo.name} | Portfolio`}
-  socialLinks={socialLinks}
-  name={personalInfo.name}
->
-  <Hero 
-    name={personalInfo.name}
-    title={personalInfo.title}
-    description="I build clean, responsive, and user-friendly websites with modern technologies."
-  />
-
-  <About 
-    name={personalInfo.name}
-    email={personalInfo.email}
-    location={personalInfo.location}
-    bio1="I'm a passionate web developer with experience in building modern web applications. I focus on creating clean, efficient, and user-friendly experiences."
-    bio2="With a background in both frontend and backend development, I enjoy bringing ideas to life through code. I'm constantly learning and exploring new technologies to improve my skills and deliver better solutions."
-  />
-
-  <Skills skills={skills} />
-
-  <Projects projects={projects} />
-
-  <Contact 
-    email={personalInfo.email}
-    location={personalInfo.location}
-    socialLinks={socialLinks}
-  />
-</MainLayout> 
+<MainLayout title="Peder | Portfolio" socialLinks={socialLinks} name="Peder">
+  <Hero />
+  <About />
+  <Skills />
+  <Projects />
+  <Contact />
+</MainLayout>

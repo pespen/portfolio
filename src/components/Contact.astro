@@ -1,84 +1,88 @@
 ---
-interface SocialLink {
-  name: string;
-  url: string;
-}
 
-interface Props {
-  email?: string;
-  location?: string;
-  socialLinks?: SocialLink[];
-  title?: string;
-  description?: string;
-}
-
-const { 
-  email = "your.email@example.com", 
-  location = "Your City, Country",
-  socialLinks = [
-    { name: "GitHub", url: "#" },
-    { name: "LinkedIn", url: "#" },
-    { name: "Twitter", url: "#" }
-  ],
-  title = "Contact Me",
-  description = "Feel free to reach out if you'd like to work together."
-} = Astro.props;
 ---
 
-<section id="contact" class="py-20 bg-gray-50 scroll-mt-24">
-  <h2 class="text-3xl font-bold text-center mb-4">{title}</h2>
-  <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-    {description}
-  </p>
-  
-  <div class="grid md:grid-cols-[3fr_2fr] gap-12">
-    <div class="bg-white p-8 rounded-lg shadow-sm">
-      <form>
-        <div class="mb-6">
-          <label for="name" class="block mb-2 font-medium">Name</label>
-          <input type="text" id="name" name="name" required 
-                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
-        </div>
-        <div class="mb-6">
-          <label for="email" class="block mb-2 font-medium">Email</label>
-          <input type="email" id="email" name="email" required 
-                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
-        </div>
-        <div class="mb-6">
-          <label for="message" class="block mb-2 font-medium">Message</label>
-          <textarea id="message" name="message" rows="5" required
-                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
-        </div>
-        <button type="submit" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-300">
-          Send Message
-        </button>
-      </form>
-    </div>
-    <div class="flex flex-col gap-8">
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Email</h3>
-        <p class="text-gray-600">{email}</p>
+<section id="contact" class="min-h-screen py-20 flex items-center scroll-mt-24">
+  <div class="container mx-auto w-[85%] max-w-7xl">
+    <h2 class="text-3xl font-bold text-center mb-4">Contact Me</h2>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+      Feel free to reach out if you'd like to work together.
+    </p>
+
+    <div class="grid md:grid-cols-[3fr_2fr] gap-12">
+      <div class="bg-white p-8 rounded-lg shadow-sm">
+        <form>
+          <div class="mb-6">
+            <label for="name" class="block mb-2 font-medium">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+          </div>
+          <div class="mb-6">
+            <label for="email" class="block mb-2 font-medium">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+          </div>
+          <div class="mb-6">
+            <label for="message" class="block mb-2 font-medium">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-md transition-colors duration-300"
+          >
+            Send Message
+          </button>
+        </form>
       </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Location</h3>
-        <p class="text-gray-600">{location}</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Social</h3>
-        <div class="flex gap-4">
-          {socialLinks.map((link) => (
-            <a 
-              href={link.url} 
-              aria-label={link.name} 
+      <div class="flex flex-col gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Email</h3>
+          <p class="text-gray-600">peder@example.com</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Location</h3>
+          <p class="text-gray-600">Norway</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Social</h3>
+          <div class="flex gap-4">
+            <a
+              href="https://github.com/pespen"
+              aria-label="GitHub"
               class="text-blue-500 hover:text-blue-700"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {link.name}
+              GitHub
             </a>
-          ))}
+            <a
+              href="https://linkedin.com/in/peder-espen-0a3ab6200"
+              aria-label="LinkedIn"
+              class="text-blue-500 hover:text-blue-700"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</section> 
+</section>

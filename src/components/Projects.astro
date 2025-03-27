@@ -1,66 +1,41 @@
 ---
-import ProjectCard from './ProjectCard.astro';
-
-interface Project {
-  title: string;
-  description: string;
-  tags: string[];
-  image?: string;
-  liveUrl?: string;
-  sourceUrl?: string;
-}
-
-interface Props {
-  projects?: Project[];
-  title?: string;
-  description?: string;
-}
-
-const { 
-  projects = [
-    {
-      title: "Project Name",
-      description: "A brief description of the project and what technologies were used.",
-      tags: ["React", "Node.js", "MongoDB"],
-      liveUrl: "#",
-      sourceUrl: "#"
-    },
-    {
-      title: "Project Name",
-      description: "A brief description of the project and what technologies were used.",
-      tags: ["Vue", "Express", "PostgreSQL"],
-      liveUrl: "#",
-      sourceUrl: "#"
-    },
-    {
-      title: "Project Name",
-      description: "A brief description of the project and what technologies were used.",
-      tags: ["Astro", "Tailwind", "Firebase"],
-      liveUrl: "#",
-      sourceUrl: "#"
-    }
-  ],
-  title = "My Projects",
-  description = "Here are some of the projects I've worked on."
-} = Astro.props;
+import ProjectCard from "./ProjectCard.astro";
 ---
 
-<section id="projects" class="py-20 scroll-mt-24">
-  <h2 class="text-3xl font-bold text-center mb-4">{title}</h2>
-  <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-    {description}
-  </p>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {projects.map((project) => (
-      <ProjectCard 
-        title={project.title}
-        description={project.description}
-        tags={project.tags}
-        image={project.image}
-        liveUrl={project.liveUrl}
-        sourceUrl={project.sourceUrl}
+<section
+  id="projects"
+  class="min-h-screen py-20 flex items-center scroll-mt-24"
+>
+  <div class="container mx-auto w-[85%] max-w-7xl">
+    <h2 class="text-3xl font-bold text-center mb-4">My Projects</h2>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+      Here are some of the projects I've worked on.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <ProjectCard
+        title="Portfolio Website"
+        description="A clean, modern portfolio website built with Astro and TailwindCSS. Features responsive design and fast performance."
+        tags={["Astro", "TailwindCSS", "TypeScript"]}
+        liveUrl="#"
+        sourceUrl="#"
       />
-    ))}
+
+      <ProjectCard
+        title="E-commerce Platform"
+        description="A full-featured online store with product listings, shopping cart, and secure checkout functionality."
+        tags={["React", "Node.js", "MongoDB"]}
+        liveUrl="#"
+        sourceUrl="#"
+      />
+
+      <ProjectCard
+        title="Task Management App"
+        description="A productivity app that helps users organize tasks, set priorities, and track progress on projects."
+        tags={["Vue", "Express", "PostgreSQL"]}
+        liveUrl="#"
+        sourceUrl="#"
+      />
+    </div>
   </div>
-</section> 
+</section>
