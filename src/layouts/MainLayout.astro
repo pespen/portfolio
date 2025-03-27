@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Particles from "../components/Particles.astro";
 
 interface SocialLink {
   name: string;
@@ -34,9 +35,10 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body
-    class="bg-gradient-to-b from-white to-sky-50 text-gray-800 font-sans min-h-screen"
-  >
+  <body class="bg-white text-gray-800 font-sans min-h-screen">
+    <!-- Background particles animation -->
+    <Particles />
+
     <!-- Header that appears on scroll -->
     <header
       id="navbar"
@@ -204,11 +206,9 @@ const {
     <main>
       <slot />
     </main>
-    <footer
-      class="py-6 border-t border-gray-100 text-center text-gray-500 text-sm"
-    >
+    <footer class="py-6 text-center text-gray-500 text-sm">
       <div class="container mx-auto w-[85%] max-w-7xl">
-        <p>&copy; {new Date().getFullYear()} | {name}</p>
+        <p>&copy; {new Date().getFullYear()} | Peder Espen</p>
       </div>
     </footer>
   </body>
