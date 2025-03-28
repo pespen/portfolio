@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import headshot from "../assets/headshot.webp";
 ---
 
 <section id="about" class="min-h-screen py-20 flex items-center scroll-mt-24">
@@ -7,11 +8,11 @@
     <h2 class="text-3xl font-bold text-center mb-4">About Me</h2>
     <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-center">
       <div class="w-full">
-        <div
-          class="w-full aspect-square bg-gray-200 rounded-full flex items-center justify-center text-gray-500"
-        >
-          Profile Image
-        </div>
+        <Image
+          src={headshot}
+          alt="Peder Espen headshot"
+          class="w-full aspect-square object-cover rounded-full shadow-md"
+        />
       </div>
       <div>
         <p class="mb-6 leading-relaxed">
