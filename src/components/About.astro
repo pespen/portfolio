@@ -9,13 +9,19 @@ import headshot from "../assets/headshot.webp";
 
     <div class="grid md:grid-cols-2 gap-12">
       <!-- Personal Information Column -->
-      <div class="flex flex-col items-center">
-        <div class="w-full max-w-xs mb-8">
-          <Image
-            src={headshot}
-            alt="Peder Espen headshot"
-            class="w-full aspect-square object-cover rounded-full shadow-md"
-          />
+      <div class="flex flex-col">
+        <div class="flex flex-col md:flex-row items-center gap-8 mb-8">
+          <div class="w-full max-w-[320px]">
+            <Image
+              src={headshot}
+              alt="Peder Espen headshot"
+              class="w-full aspect-square object-cover rounded-full shadow-md"
+            />
+          </div>
+          <div class="text-center md:text-left">
+            <h3 class="text-3xl font-bold mb-3">Peder Espen</h3>
+            <p class="text-gray-600 text-xl">Oslo, Norway</p>
+          </div>
         </div>
 
         <div class="w-full">
@@ -24,47 +30,124 @@ import headshot from "../assets/headshot.webp";
             web applications. I focus on creating clean, efficient, and
             user-friendly experiences.
           </p>
-          <p class="mb-6 leading-relaxed">
+          <p class="leading-relaxed">
             With a background in both frontend and backend development, I enjoy
             bringing ideas to life through code. I'm constantly learning and
             exploring new technologies to improve my skills.
           </p>
-
-          <div class="mt-6">
-            <div class="mb-3 flex">
-              <span class="font-bold min-w-[100px]">Name:</span>
-              <span>Peder Espen</span>
-            </div>
-            <div class="mb-3 flex">
-              <span class="font-bold min-w-[100px]">Email:</span>
-              <span>pederespen@gmail.com</span>
-            </div>
-            <div class="mb-3 flex">
-              <span class="font-bold min-w-[100px]">Location:</span>
-              <span>Oslo, Norway</span>
-            </div>
-          </div>
         </div>
       </div>
 
       <!-- Skills Column -->
       <div class="flex flex-col">
-        <div class="grid grid-cols-1 gap-6">
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h4 class="text-xl font-semibold mb-2">Frontend</h4>
-            <p class="text-gray-600">
-              HTML, CSS, JavaScript, React, Vue, Astro
-            </p>
+        <h3 class="text-xl font-bold mb-6">Skills & Expertise</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Frontend Category -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg group"
+          >
+            <div class="p-5 bg-gray-50 border-b">
+              <h4 class="text-xl font-semibold">Frontend</h4>
+            </div>
+            <div class="p-5">
+              <ul class="space-y-2">
+                <li class="flex items-center">
+                  <span class="w-3 h-3 bg-blue-500 rounded-full mr-2"></span>
+                  <span>HTML & CSS</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-3 h-3 bg-blue-500 rounded-full mr-2"></span>
+                  <span>JavaScript & TypeScript</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-3 h-3 bg-blue-500 rounded-full mr-2"></span>
+                  <span>React</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-3 h-3 bg-blue-500 rounded-full mr-2"></span>
+                  <span>Svelte/SvelteKit</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h4 class="text-xl font-semibold mb-2">Backend</h4>
-            <p class="text-gray-600">Node.js, Express, MongoDB, PostgreSQL</p>
+          <!-- Backend Category -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg group"
+          >
+            <div class="p-5 bg-gray-50 border-b">
+              <h4 class="text-xl font-semibold">Backend</h4>
+            </div>
+            <div class="p-5">
+              <ul class="space-y-2">
+                <li class="flex items-center">
+                  <span class="w-3 h-3 bg-green-500 rounded-full mr-2"></span>
+                  <span>Python</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-3 h-3 bg-green-500 rounded-full mr-2"></span>
+                  <span>Django</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-3 h-3 bg-green-500 rounded-full mr-2"></span>
+                  <span>Databases: PostgreSQL, SQL, MongoDB</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-3 h-3 bg-green-500 rounded-full mr-2"></span>
+                  <span>Azure Service Bus</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h4 class="text-xl font-semibold mb-2">Tools</h4>
-            <p class="text-gray-600">Git, Webpack, Docker, AWS</p>
+          <!-- DevOps Category -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg group"
+          >
+            <div class="p-5 bg-gray-50 border-b">
+              <h4 class="text-xl font-semibold">DevOps & Tools</h4>
+            </div>
+            <div class="p-5">
+              <ul class="space-y-2">
+                <li class="flex items-center">
+                  <span class="w-3 h-3 bg-purple-500 rounded-full mr-2"></span>
+                  <span>CI/CD Pipelines</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-3 h-3 bg-purple-500 rounded-full mr-2"></span>
+                  <span>Docker & Container Apps</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-3 h-3 bg-purple-500 rounded-full mr-2"></span>
+                  <span>GitHub & GitHub Actions</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Specialized Skills Category -->
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg group"
+          >
+            <div class="p-5 bg-gray-50 border-b">
+              <h4 class="text-xl font-semibold">Specialized Skills</h4>
+            </div>
+            <div class="p-5">
+              <ul class="space-y-2">
+                <li class="flex items-center">
+                  <span class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></span>
+                  <span>Machine Learning</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></span>
+                  <span>Computer Vision</span>
+                </li>
+                <li class="flex items-center">
+                  <span class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></span>
+                  <span>Excel VBA</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
