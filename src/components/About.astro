@@ -3,41 +3,68 @@ import { Image } from "astro:assets";
 import headshot from "../assets/headshot.webp";
 ---
 
-<section id="about" class="min-h-screen py-20 flex items-center scroll-mt-24">
+<section id="about" class="min-h-screen py-20 flex items-center scroll-mt-2">
   <div class="container mx-auto w-[85%] max-w-7xl">
-    <h2 class="text-3xl font-bold text-center mb-4">About Me</h2>
-    <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-center">
-      <div class="w-full">
-        <Image
-          src={headshot}
-          alt="Peder Espen headshot"
-          class="w-full aspect-square object-cover rounded-full shadow-md"
-        />
+    <h2 class="text-3xl font-bold text-center mb-12">About</h2>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Personal Information Column -->
+      <div class="flex flex-col items-center">
+        <div class="w-full max-w-xs mb-8">
+          <Image
+            src={headshot}
+            alt="Peder Espen headshot"
+            class="w-full aspect-square object-cover rounded-full shadow-md"
+          />
+        </div>
+
+        <div class="w-full">
+          <p class="mb-6 leading-relaxed">
+            I'm a passionate web developer with experience in building modern
+            web applications. I focus on creating clean, efficient, and
+            user-friendly experiences.
+          </p>
+          <p class="mb-6 leading-relaxed">
+            With a background in both frontend and backend development, I enjoy
+            bringing ideas to life through code. I'm constantly learning and
+            exploring new technologies to improve my skills.
+          </p>
+
+          <div class="mt-6">
+            <div class="mb-3 flex">
+              <span class="font-bold min-w-[100px]">Name:</span>
+              <span>Peder Espen</span>
+            </div>
+            <div class="mb-3 flex">
+              <span class="font-bold min-w-[100px]">Email:</span>
+              <span>pederespen@gmail.com</span>
+            </div>
+            <div class="mb-3 flex">
+              <span class="font-bold min-w-[100px]">Location:</span>
+              <span>Oslo, Norway</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <p class="mb-6 leading-relaxed">
-          I'm a passionate web developer with experience in building modern web
-          applications. I focus on creating clean, efficient, and user-friendly
-          experiences.
-        </p>
-        <p class="mb-6 leading-relaxed">
-          With a background in both frontend and backend development, I enjoy
-          bringing ideas to life through code. I'm constantly learning and
-          exploring new technologies to improve my skills and deliver better
-          solutions.
-        </p>
-        <div class="mt-8">
-          <div class="mb-3 flex">
-            <span class="font-bold min-w-[100px]">Name:</span>
-            <span>Peder Espen</span>
+
+      <!-- Skills Column -->
+      <div class="flex flex-col">
+        <div class="grid grid-cols-1 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h4 class="text-xl font-semibold mb-2">Frontend</h4>
+            <p class="text-gray-600">
+              HTML, CSS, JavaScript, React, Vue, Astro
+            </p>
           </div>
-          <div class="mb-3 flex">
-            <span class="font-bold min-w-[100px]">Email:</span>
-            <span>pederespen@gmail.com</span>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h4 class="text-xl font-semibold mb-2">Backend</h4>
+            <p class="text-gray-600">Node.js, Express, MongoDB, PostgreSQL</p>
           </div>
-          <div class="mb-3 flex">
-            <span class="font-bold min-w-[100px]">Location:</span>
-            <span>Oslo, Norway</span>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h4 class="text-xl font-semibold mb-2">Tools</h4>
+            <p class="text-gray-600">Git, Webpack, Docker, AWS</p>
           </div>
         </div>
       </div>
